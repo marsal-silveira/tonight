@@ -12,10 +12,12 @@
 		5E7434141C84EF4C004FF3A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E7434081C84EF4C004FF3A2 /* Assets.xcassets */; };
 		5E7434151C84EF4C004FF3A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E7434091C84EF4C004FF3A2 /* LaunchScreen.storyboard */; };
 		5E7434161C84EF4C004FF3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74340B1C84EF4C004FF3A2 /* Main.storyboard */; };
-		5E7434171C84EF4C004FF3A2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E74340D1C84EF4C004FF3A2 /* Info.plist */; };
 		5E7434181C84EF4C004FF3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434101C84EF4C004FF3A2 /* AppDelegate.swift */; };
-		5E7434191C84EF4C004FF3A2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434121C84EF4C004FF3A2 /* FirstViewController.swift */; };
 		5E74341A1C84EF4C004FF3A2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434131C84EF4C004FF3A2 /* SecondViewController.swift */; };
+		5E74341F1C84F3C7004FF3A2 /* Main_.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74341D1C84F3C7004FF3A2 /* Main_.storyboard */; };
+		5E7434211C84F440004FF3A2 /* ClubListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434201C84F440004FF3A2 /* ClubListTableViewController.swift */; };
+		5E7434241C84F448004FF3A2 /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434231C84F448004FF3A2 /* ClubTableViewCell.swift */; };
+		5E7434261C84F7BB004FF3A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434251C84F7BB004FF3A2 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +51,11 @@
 		5E74340D1C84EF4C004FF3A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E74340E1C84EF4C004FF3A2 /* Tonight-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tonight-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E7434101C84EF4C004FF3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E7434121C84EF4C004FF3A2 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		5E7434131C84EF4C004FF3A2 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5E74341E1C84F3C7004FF3A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_.storyboard; sourceTree = "<group>"; };
+		5E7434201C84F440004FF3A2 /* ClubListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListTableViewController.swift; sourceTree = "<group>"; };
+		5E7434231C84F448004FF3A2 /* ClubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
+		5E7434251C84F7BB004FF3A2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				5E7434101C84EF4C004FF3A2 /* AppDelegate.swift */,
+				5E7434221C84F448004FF3A2 /* Views */,
 				5E7434111C84EF4C004FF3A2 /* Controllers */,
 			);
 			path = src;
@@ -147,7 +153,8 @@
 		5E7434111C84EF4C004FF3A2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5E7434121C84EF4C004FF3A2 /* FirstViewController.swift */,
+				5E7434201C84F440004FF3A2 /* ClubListTableViewController.swift */,
+				5E7434251C84F7BB004FF3A2 /* MapViewController.swift */,
 				5E7434131C84EF4C004FF3A2 /* SecondViewController.swift */,
 			);
 			path = Controllers;
@@ -156,8 +163,9 @@
 		5E74341B1C84EF5E004FF3A2 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				5E7434091C84EF4C004FF3A2 /* LaunchScreen.storyboard */,
+				5E74341D1C84F3C7004FF3A2 /* Main_.storyboard */,
 				5E74340B1C84EF4C004FF3A2 /* Main.storyboard */,
+				5E7434091C84EF4C004FF3A2 /* LaunchScreen.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -169,6 +177,14 @@
 				5E74340E1C84EF4C004FF3A2 /* Tonight-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E7434221C84F448004FF3A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E7434231C84F448004FF3A2 /* ClubTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +291,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E7434171C84EF4C004FF3A2 /* Info.plist in Resources */,
-				5E7434161C84EF4C004FF3A2 /* Main.storyboard in Resources */,
 				5E7434141C84EF4C004FF3A2 /* Assets.xcassets in Resources */,
+				5E7434161C84EF4C004FF3A2 /* Main.storyboard in Resources */,
 				5E7434151C84EF4C004FF3A2 /* LaunchScreen.storyboard in Resources */,
+				5E74341F1C84F3C7004FF3A2 /* Main_.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,8 +320,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E74341A1C84EF4C004FF3A2 /* SecondViewController.swift in Sources */,
+				5E7434261C84F7BB004FF3A2 /* MapViewController.swift in Sources */,
 				5E7434181C84EF4C004FF3A2 /* AppDelegate.swift in Sources */,
-				5E7434191C84EF4C004FF3A2 /* FirstViewController.swift in Sources */,
+				5E7434241C84F448004FF3A2 /* ClubTableViewCell.swift in Sources */,
+				5E7434211C84F440004FF3A2 /* ClubListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +373,14 @@
 				5E74340C1C84EF4C004FF3A2 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5E74341D1C84F3C7004FF3A2 /* Main_.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E74341E1C84F3C7004FF3A2 /* Base */,
+			);
+			name = Main_.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -453,6 +479,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.marsal.silveira.Tonight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tonight/res/Tonight-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -464,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.marsal.silveira.Tonight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tonight/res/Tonight-Bridging-Header.h";
 			};
 			name = Release;
 		};
