@@ -118,7 +118,7 @@
         <!--Title-->
         <scene sceneID="3Vy-sm-rkc">
             <objects>
-                <viewController id="Rbg-Td-xTd" customClass="FirstViewController" customModule="Tonight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rbg-Td-xTd" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P2y-4t-Jqi"/>
                         <viewControllerLayoutGuide type="bottom" id="c63-4U-F1Q"/>
@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="1291" y="-294"/>
         </scene>
-        <!--Item-->
+        <!--Club List Table View Controller-->
         <scene sceneID="pUq-S3-bgt">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="x2C-HQ-fHb" customClass="ClubListTableViewController" customModule="Tonight" customModuleProvider="target" sceneMemberID="viewController">
@@ -226,7 +226,6 @@
                             <outlet property="delegate" destination="x2C-HQ-fHb" id="6W5-XX-ua3"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" image="tabbar-recents" id="JJe-f5-MYO"/>
                     <navigationItem key="navigationItem" id="GbU-RC-hE6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSO-5g-h10" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,9 +234,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default-avatar" width="1600" height="900"/>
+        <image name="default-avatar" width="1290" height="1290"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
-        <image name="tabbar-recents" width="1600" height="900"/>
     </resources>
 </document>

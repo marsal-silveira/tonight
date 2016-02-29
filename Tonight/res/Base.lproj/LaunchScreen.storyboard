@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +15,37 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="sVD-jo-OhP">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tonight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c15-NH-ucd">
+                                <rect key="frame" x="19" y="60" width="282" height="115"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="84"/>
+                                <color key="textColor" red="0.022803501310000002" green="0.022803501310000002" blue="0.022803501310000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sVD-jo-OhP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1DO-MD-tYG"/>
+                            <constraint firstItem="sVD-jo-OhP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="2yZ-wl-QUD"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sVD-jo-OhP" secondAttribute="bottom" id="8OH-ex-lNV"/>
+                            <constraint firstItem="sVD-jo-OhP" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="9Ox-Gv-FBZ"/>
+                            <constraint firstItem="c15-NH-ucd" firstAttribute="centerX" secondItem="sVD-jo-OhP" secondAttribute="centerX" id="VKN-Jr-wOp"/>
+                            <constraint firstItem="c15-NH-ucd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="40" id="hyZ-hV-iQh"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="323" y="373"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login-bg" width="1600" height="900"/>
+    </resources>
 </document>
