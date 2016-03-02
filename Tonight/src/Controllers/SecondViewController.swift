@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  Tonight
 //
-//  Created by Domsys on 29/02/16.
+//  Created by Marsal on 29/02/16.
 //  Copyright © 2016 Marsal Silveira. All rights reserved.
 //
 

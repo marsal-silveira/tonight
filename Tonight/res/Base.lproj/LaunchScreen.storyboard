@@ -21,10 +21,10 @@
                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="sVD-jo-OhP">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tonight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c15-NH-ucd">
-                                <rect key="frame" x="19" y="60" width="282" height="115"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="84"/>
-                                <color key="textColor" red="0.022803501310000002" green="0.022803501310000002" blue="0.022803501310000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tonight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hI5-OJ-Atc">
+                                <rect key="frame" x="51" y="104" width="218" height="78"/>
+                                <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="70"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -34,8 +34,8 @@
                             <constraint firstItem="sVD-jo-OhP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="2yZ-wl-QUD"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sVD-jo-OhP" secondAttribute="bottom" id="8OH-ex-lNV"/>
                             <constraint firstItem="sVD-jo-OhP" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="9Ox-Gv-FBZ"/>
-                            <constraint firstItem="c15-NH-ucd" firstAttribute="centerX" secondItem="sVD-jo-OhP" secondAttribute="centerX" id="VKN-Jr-wOp"/>
-                            <constraint firstItem="c15-NH-ucd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="40" id="hyZ-hV-iQh"/>
+                            <constraint firstItem="hI5-OJ-Atc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-141" id="d5t-fK-bAd"/>
+                            <constraint firstItem="hI5-OJ-Atc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="s7q-zR-g1S"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
