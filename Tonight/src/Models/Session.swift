@@ -20,6 +20,7 @@ struct User
     // MARK: Properties
     // ****************************** //
 
+    // stored
     private var _uid: String?
     var uid: String? {
         return _uid
@@ -39,22 +40,38 @@ struct User
     var email: String {
         return _email
     }
+    
+    // temporal
+    private var _avatarPath: String
+    var avatarPath: String {
+        return _avatarPath
+    }
+    
+    private var _avatarURL: NSURL
+    var avatarURL: NSURL {
+        return _avatarURL
+    }
 
     // ****************************** //
     // MARK: Init
     // ****************************** //
     
-    init(provider: String, name: String, email: String)
+    init(provider: String, name: String, email: String, avatarPath: String)
     {
-        self.init(uid: nil, provider: provider, name: name, email: email)
+        self.init(uid: nil, provider: provider, name: name, email: email, avatarPath: avatarPath)
     }
     
-    init(uid: String?, provider: String, name: String, email: String)
+    init(uid: String?, provider: String, name: String, email: String, avatarPath: String)
     {
+        // stored
         _uid = uid
         _provider = provider
         _name = name
         _email = email
+        _avatarPath = avatarPath
+        
+        // temporal
+        _avatarURL = NSURL(string: _avatarPath)!
     }
     
     // ****************************** //
@@ -85,10 +102,7 @@ class Session
     }
     
     // this must be private to avoid init without using singleton way
-    private init()
-    {
-        // do nothing
-    }
+    private init() {}
     
     // ****************************** //
     // MARK: Properties
@@ -114,16 +128,17 @@ class Session
                 // if has some error return false and show a message to user
                 if (error != nil) {
                     // print error and call completion block with result values
-                    print("Error signing. \(error)")
+                    Logger.log("Error signing. \(error)")
                     completionBlock(logged: false, message: "Check your email and password.")
                 }
                 else {
-                    // get logged user and store it (uid) into UserDefauts
-                    self._user = User(uid: authData.uid, provider: authData.provider, name: "", email: email)
+                    // get logged user and store it (uid) into UserDefaults
+                    let email = authData.providerData["email"] as! String
+                    let avatarPath = authData.providerData["profileImageURL"] as! String
+                    self._user = User(uid: authData.uid, provider: authData.provider, name: email, email: email, avatarPath: avatarPath)
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                     
-                    // print error and call completion block with result values
-                    print("Logged in '\(authData.provider)' with '\(authData)'")
+                    // call completion block with result values
                     completionBlock(logged: true, message: "Logged in '\(authData.provider)' with '\(authData)'")
                 }
             })
@@ -140,12 +155,12 @@ class Session
             
             if (facebookError != nil) {
                 // print error and call completion block with result values
-                print("Facebook login failed. Error \(facebookError)")
+                Logger.log("Facebook login failed. Error \(facebookError)")
                 completionBlock(logged: false, message: "Facebook login failed. Error \(facebookError)")
             }
             else if facebookResult.isCancelled {
                 // print error and call completion block with result values
-                print("Facebook login was cancelled.")
+                Logger.log("Facebook login was cancelled.")
                 completionBlock(logged: false, message: "Facebook login was cancelled.")
             }
             else {
@@ -154,16 +169,18 @@ class Session
                     
                     if (error != nil) {
                         // print error and call completion block with result values
-                        print("Login failed. \(error)")
+                        Logger.log("Login failed. \(error)")
                         completionBlock(logged: false, message: "Facebook login failed. Error \(error)")
                     }
                     else {
-                        // get logged user and store it (uid) into UserDefauts
-                        self._user = User(uid: authData.uid, provider: authData.provider, name: "", email: "")
+                        // get logged user and store it (uid) into UserDefaults
+                        let name = authData.providerData["displayName"] as! String
+                        let email = authData.providerData["email"] as! String
+                        let avatarPath = authData.providerData["profileImageURL"] as! String
+                        self._user = User(uid: authData.uid, provider: authData.provider, name: name, email: email, avatarPath: avatarPath)
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                         
-                        // print error and call completion block with result values
-                        print("Logged in '\(authData.provider)' with '\(authData)'")
+                        // call completion block with result values
                         completionBlock(logged: true, message: "Logged in '\(authData.provider)' with '\(authData)'")
                     }
                 })
@@ -177,6 +194,10 @@ class Session
         FirebaseApp.sharedInstance().unauthUser()
         _user = nil
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+        
+        // now, go to login screen
+        let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
     }
     
     func doSignUpWithName(name: String, email: String, andPassword password: String, withCompletionBlock completionBlock: ((logged: Bool, message: String) -> Void))
@@ -215,8 +236,12 @@ class Session
     {
         // check if has a previous user stored and try restore its session...
         if let authData = FirebaseApp.sharedInstance().restorePreviousSession() {
-            _user = User(uid: authData.uid, provider: authData.provider, name: "", email: "")
-            print("Logged in '\(authData.provider)' with '\(authData)'")
+            
+            let name = (authData.provider! == "facebook") ? authData.providerData["displayName"] as! String : authData.providerData["email"] as! String
+            let email = authData.providerData["email"] as! String
+            let avatarPath = authData.providerData["profileImageURL"] as! String
+            _user = User(uid: authData.uid, provider: authData.provider, name: name, email: email, avatarPath: avatarPath)
+
             return true
         }
         return false

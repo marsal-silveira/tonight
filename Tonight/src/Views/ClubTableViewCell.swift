@@ -11,10 +11,18 @@ import Haneke
 
 class ClubTableViewCell: UITableViewCell
 {
-    @IBOutlet private weak var _lblName: UILabel!
-    @IBOutlet private weak var _lblCity: UILabel!
-    @IBOutlet private weak var _lblDistance: UILabel!
+    // *********************************** //
+    // MARK: @IBOutlet
+    // *********************************** //
+
     @IBOutlet private weak var _imgViewPhoto: UIImageView!
+    @IBOutlet private weak var _lblName: UILabel!
+    @IBOutlet private weak var _lblAddress: UILabel!
+    @IBOutlet private weak var _lblDistance: UILabel!
+    
+    // *********************************** //
+    // MARK: Utils
+    // *********************************** //
     
     func configureCell(club: Club)
     {
@@ -25,7 +33,7 @@ class ClubTableViewCell: UITableViewCell
 
         // load labels and image view with club properties
         _lblName.text = club.name
-        _lblCity.text = club.city
+        _lblAddress.text = club.address
         _lblDistance.text = distanceFromUser
         _imgViewPhoto.hnk_setImageFromURL(club.logoURL)
     }

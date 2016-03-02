@@ -21,10 +21,7 @@ struct FirebaseApp
     }
     
     // this must be private to avoid init it without using singleton way
-    private init()
-    {
-        // do nothing...
-    }
+    private init() { }
     
     // ****************************** //
     // MARK: Firebase References
@@ -107,7 +104,7 @@ struct FirebaseApp
         _CLUB_REF.queryOrderedByChild("city").queryEqualToValue(city).observeEventType(.Value, withBlock: { snapshot in
             
             // The snapshot is a current look at our clubs data
-            print(snapshot.value)
+//            print(snapshot.value)
             
             var result = [Club]()
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {

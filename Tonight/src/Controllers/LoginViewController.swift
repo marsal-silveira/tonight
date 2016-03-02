@@ -100,7 +100,6 @@ class LoginViewController: UIViewController
     
     @IBAction func btnLoginWithFacebookTap(sender: UIButton)
     {
-        self.segueToMain()
         // try do login using email and password
         Session.sharedInstance().doLoginWithFacebookFromViewController(self, completionBlock: { logged, message in
             
