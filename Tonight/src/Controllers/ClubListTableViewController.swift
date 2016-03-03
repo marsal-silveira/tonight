@@ -12,7 +12,7 @@ import Firebase
 class ClubListTableViewController : UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
     // ****************************** //
-    // MARK: Init
+    // MARK: Properties
     // ****************************** //
     
     private var _clubs: [Club] = [Club]()
@@ -34,14 +34,14 @@ class ClubListTableViewController : UITableViewController, UIPickerViewDataSourc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if (segue.identifier == Segue_ListToDetail) {
-            let viewController = segue.destinationViewController as! ClubDetailTableViewController
-            viewController.selectedClub = _selectedClub
+            let viewController = segue.destinationViewController as! ClubDetailsTableViewController
+            viewController.club = _selectedClub
         }
     }
     
     func updateTitle()
     {
-        self.navigationItem.title = "\(_selectedFilter!)'s Club"
+        self.navigationItem.title = "\(_selectedFilter!)"
     }
     
     // *********************************** //
@@ -59,12 +59,12 @@ class ClubListTableViewController : UITableViewController, UIPickerViewDataSourc
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var result: ClubTableViewCell!
-        if let cell = tableView.dequeueReusableCellWithIdentifier("ClubCell") as? ClubTableViewCell {
+        var result: ClubListTableViewCell!
+        if let cell = tableView.dequeueReusableCellWithIdentifier(Cell_Identifier_ClubListCell) as? ClubListTableViewCell {
             result = cell
         }
         else {
-            result = ClubTableViewCell()
+            result = ClubListTableViewCell()
         }
         result.configureCell(_clubs[indexPath.row])
         return result
@@ -88,11 +88,19 @@ class ClubListTableViewController : UITableViewController, UIPickerViewDataSourc
     private func fetchDataFromCity(city: String)
     {
         // wait until Firebase send data or occurs some event
-        FirebaseApp.sharedInstance().fechtClubsFromServerFromCity(city, completionBlock: { clubs in
+        FirebaseApp.sharedInstance().fetchClubsWithFilter(city, completionBlock: { clubs in
             
             // update clubs list and refresh table data with new values
             self._clubs = clubs
             self.tableView.reloadData()
+            
+        }, failBlock: { error in
+            Logger.log("Errro fetching data. Error: \(error.localizedDescription)")
+            
+            // create and configure alert to ask user confirmation to do logout
+            let alert = UIAlertController(title: "Tonight!", message: "Error fetching data.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         })
         
         // finally update title with selected filter
@@ -103,7 +111,7 @@ class ClubListTableViewController : UITableViewController, UIPickerViewDataSourc
     // MARK: Filter Controller
     // *************************************************************** //
     
-    private let _pickerData = ["Palhoça", "Santo Amaro da Imperatriz", "São José", "Florianópolis"]
+    private let _pickerData = [Filter_All_Places, Filter_Palhoca, Filter_Santo_Amaro_da_Imperatriz, Filter_Sao_Jose, Filter_Florianopolis]
     private var _selectedFilter: String?
     
     // PickerView inside AlertController
@@ -126,8 +134,11 @@ class ClubListTableViewController : UITableViewController, UIPickerViewDataSourc
         }
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
             alert.popoverPresentationController?.sourceView = self.view
-            alert.popoverPresentationController?.sourceRect = picker.bounds
+//            alert.popoverPresentationController?.sourceRect = picker.bounds
         }
+        
+        // set selected filter as selected value in picker view
+        picker.selectRow(_pickerData.indexOf(_selectedFilter!)!, inComponent: 0, animated: true)
         
         // create the toolbar view - the view witch will hold our 2 buttons
         let toolView: UIView = UIView(frame: CGRectMake(17, 5, 270, 45))

@@ -1,5 +1,5 @@
 //
-//  ClubTableViewCell.swift
+//  ClubListTableViewCell.swift
 //  Tonight
 //
 //  Created by Marsal on 29/02/16.
@@ -9,7 +9,7 @@
 import UIKit
 import Haneke
 
-class ClubTableViewCell: UITableViewCell
+class ClubListTableViewCell: UITableViewCell
 {
     // *********************************** //
     // MARK: @IBOutlet
@@ -24,16 +24,26 @@ class ClubTableViewCell: UITableViewCell
     // MARK: Utils
     // *********************************** //
     
+    override func prepareForReuse()
+    {
+        // just clear all ui fields
+        _lblName.text = ""
+        _lblAddress.text = ""
+        _lblDistance.text = ""
+        _imgViewPhoto.image = NoImageSingleton.placeholderImageView
+    }
+    
     func configureCell(club: Club)
     {
         var distanceFromUser: String = ""
         if let distance = club.distance {
             distanceFromUser = "\(String(format: "%.1f", distance.toKilometer())) km"
         }
-
+        
         // load labels and image view with club properties
         _lblName.text = club.name
-        _lblAddress.text = club.address
+        // if device is an iPhone we show the city instead of all club address... this is because we have less space here and this information will be at details screen
+        _lblAddress.text = (UIDevice.currentDevice().userInterfaceIdiom == .Phone) ? club.city : club.address
         _lblDistance.text = distanceFromUser
         _imgViewPhoto.hnk_setImageFromURL(club.logoURL)
     }

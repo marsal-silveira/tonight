@@ -40,6 +40,14 @@ class Party
     // MARK: Init
     // ****************************** //
     
+    init(properties: [String: AnyObject])
+    {
+        _title = properties["title"] as! String
+        _description = properties["description"] as! String
+        _date = properties["date"] as! String
+        _price = properties["price"] as! String
+    }
+    
     init(title: String, description: String, date: String, price: String)
     {
         _title = title
@@ -54,7 +62,7 @@ class Party
     
     func toJSON() -> Dictionary<String, AnyObject>
     {
-        return ["title": _title, "description": _description, "date": _date, "preice": _price]
+        return ["title": _title, "description": _description, "date": _date, "price": _price]
     }
     
 }

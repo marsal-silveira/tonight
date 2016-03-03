@@ -15,10 +15,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     // MARK: Properties
     // *********************************** //
     
-    private var _selectedClub: Club!
-    var selectedClub: Club {
-        get { return _selectedClub }
-        set(newValue) { _selectedClub = newValue }
+    private var _club: Club!
+    var club: Club {
+        get { return _club }
+        set(newValue) { _club = newValue }
     }
     
     // *********************************** //
@@ -37,7 +37,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         
         mapView.showsUserLocation = true
-        self.pinLocation(_selectedClub.location)
+        self.pinLocation(_club.location)
     }
     
     // *********************************** //
@@ -58,8 +58,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location.coordinate
-        annotation.title = _selectedClub.name
-        annotation.subtitle = _selectedClub.address
+        annotation.title = _club.name
+        annotation.subtitle = _club.address
         self.mapView.addAnnotation(annotation)
         self.centerMapOnLocation(location)
     }

@@ -15,3 +15,8 @@ func showSimpleAlertWithTitle(title: String!, message: String, viewController: U
     alert.addAction(action)
     viewController.presentViewController(alert, animated: true, completion: nil)
 }
+
+class NoImageSingleton
+{
+    static let placeholderImageView = UIImage(named: "no-image")
+}

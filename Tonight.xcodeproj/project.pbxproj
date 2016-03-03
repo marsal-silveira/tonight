@@ -10,6 +10,10 @@
 		5E1C528D1C86624000C34BD7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C528C1C86624000C34BD7 /* Utils.swift */; };
 		5E1C528F1C8680AC00C34BD7 /* CLLocationDistance+Tonight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C528E1C8680AC00C34BD7 /* CLLocationDistance+Tonight.swift */; };
 		5E1C52911C86CCCA00C34BD7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C52901C86CCCA00C34BD7 /* ProfileViewController.swift */; };
+		5E1C52981C87ABF400C34BD7 /* ClubListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C52941C87ABF400C34BD7 /* ClubListTableViewCell.swift */; };
+		5E1C52991C87ABF400C34BD7 /* ClubPartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C52951C87ABF400C34BD7 /* ClubPartyTableViewCell.swift */; };
+		5E1C529B1C87E49000C34BD7 /* ClubDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C529A1C87E49000C34BD7 /* ClubDetailsTableViewCell.swift */; };
+		5E1C529D1C87E49800C34BD7 /* ClubDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C529C1C87E49800C34BD7 /* ClubDetailsTableViewController.swift */; };
 		5E62656C1C8645E8003759C0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62656B1C8645E8003759C0 /* Logger.swift */; };
 		5E62656E1C86498A003759C0 /* Geolocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E62656D1C86498A003759C0 /* Geolocator.swift */; };
 		5E7433EF1C84EE56004FF3A2 /* TonightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7433EE1C84EE56004FF3A2 /* TonightTests.swift */; };
@@ -19,7 +23,6 @@
 		5E7434161C84EF4C004FF3A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E74340B1C84EF4C004FF3A2 /* Main.storyboard */; };
 		5E7434181C84EF4C004FF3A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434101C84EF4C004FF3A2 /* AppDelegate.swift */; };
 		5E7434211C84F440004FF3A2 /* ClubListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434201C84F440004FF3A2 /* ClubListTableViewController.swift */; };
-		5E7434241C84F448004FF3A2 /* ClubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434231C84F448004FF3A2 /* ClubTableViewCell.swift */; };
 		5E7434261C84F7BB004FF3A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434251C84F7BB004FF3A2 /* MapViewController.swift */; };
 		5E7434281C85087C004FF3A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434271C85087C004FF3A2 /* LoginViewController.swift */; };
 		5E74342B1C8508F4004FF3A2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74342A1C8508F4004FF3A2 /* Constants.swift */; };
@@ -27,7 +30,6 @@
 		5E7434341C85165D004FF3A2 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74342F1C85165D004FF3A2 /* Club.swift */; };
 		5E7434361C85165D004FF3A2 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434311C85165D004FF3A2 /* Party.swift */; };
 		5E7434371C85165D004FF3A2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434321C85165D004FF3A2 /* Session.swift */; };
-		5E7434391C852CCE004FF3A2 /* ClubDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7434381C852CCE004FF3A2 /* ClubDetailTableViewController.swift */; };
 		ED4760FFE8BC2933A62F3CA3 /* Pods_Tonight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25A7D63A86F937B07F7E199 /* Pods_Tonight.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,10 @@
 		5E1C528C1C86624000C34BD7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5E1C528E1C8680AC00C34BD7 /* CLLocationDistance+Tonight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationDistance+Tonight.swift"; sourceTree = "<group>"; };
 		5E1C52901C86CCCA00C34BD7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5E1C52941C87ABF400C34BD7 /* ClubListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListTableViewCell.swift; sourceTree = "<group>"; };
+		5E1C52951C87ABF400C34BD7 /* ClubPartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubPartyTableViewCell.swift; sourceTree = "<group>"; };
+		5E1C529A1C87E49000C34BD7 /* ClubDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		5E1C529C1C87E49800C34BD7 /* ClubDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailsTableViewController.swift; sourceTree = "<group>"; };
 		5E62656B1C8645E8003759C0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5E62656D1C86498A003759C0 /* Geolocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geolocator.swift; sourceTree = "<group>"; };
 		5E7433D41C84EE56004FF3A2 /* Tonight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tonight.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +74,6 @@
 		5E74340E1C84EF4C004FF3A2 /* Tonight-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tonight-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E7434101C84EF4C004FF3A2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E7434201C84F440004FF3A2 /* ClubListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubListTableViewController.swift; sourceTree = "<group>"; };
-		5E7434231C84F448004FF3A2 /* ClubTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubTableViewCell.swift; sourceTree = "<group>"; };
 		5E7434251C84F7BB004FF3A2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5E7434271C85087C004FF3A2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E74342A1C8508F4004FF3A2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -76,7 +81,6 @@
 		5E74342F1C85165D004FF3A2 /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		5E7434311C85165D004FF3A2 /* Party.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		5E7434321C85165D004FF3A2 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		5E7434381C852CCE004FF3A2 /* ClubDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubDetailTableViewController.swift; sourceTree = "<group>"; };
 		6E44053F4603CF19E5A0F36B /* Pods-Tonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tonight/Pods-Tonight.release.xcconfig"; sourceTree = "<group>"; };
 		9F2A66553861A2353D9CA10B /* Pods-Tonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tonight/Pods-Tonight.debug.xcconfig"; sourceTree = "<group>"; };
 		C25A7D63A86F937B07F7E199 /* Pods_Tonight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tonight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +189,7 @@
 			children = (
 				5E7434271C85087C004FF3A2 /* LoginViewController.swift */,
 				5E7434201C84F440004FF3A2 /* ClubListTableViewController.swift */,
-				5E7434381C852CCE004FF3A2 /* ClubDetailTableViewController.swift */,
+				5E1C529C1C87E49800C34BD7 /* ClubDetailsTableViewController.swift */,
 				5E7434251C84F7BB004FF3A2 /* MapViewController.swift */,
 				5E1C52901C86CCCA00C34BD7 /* ProfileViewController.swift */,
 			);
@@ -213,7 +217,9 @@
 		5E7434221C84F448004FF3A2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5E7434231C84F448004FF3A2 /* ClubTableViewCell.swift */,
+				5E1C52941C87ABF400C34BD7 /* ClubListTableViewCell.swift */,
+				5E1C529A1C87E49000C34BD7 /* ClubDetailsTableViewCell.swift */,
+				5E1C52951C87ABF400C34BD7 /* ClubPartyTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,9 +453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E1C529D1C87E49800C34BD7 /* ClubDetailsTableViewController.swift in Sources */,
 				5E7434281C85087C004FF3A2 /* LoginViewController.swift in Sources */,
 				5E7434341C85165D004FF3A2 /* Club.swift in Sources */,
-				5E7434391C852CCE004FF3A2 /* ClubDetailTableViewController.swift in Sources */,
 				5E7434361C85165D004FF3A2 /* Party.swift in Sources */,
 				5E1C528D1C86624000C34BD7 /* Utils.swift in Sources */,
 				5E7434261C84F7BB004FF3A2 /* MapViewController.swift in Sources */,
@@ -457,10 +463,12 @@
 				5E62656E1C86498A003759C0 /* Geolocator.swift in Sources */,
 				5E7434181C84EF4C004FF3A2 /* AppDelegate.swift in Sources */,
 				5E74342B1C8508F4004FF3A2 /* Constants.swift in Sources */,
+				5E1C52991C87ABF400C34BD7 /* ClubPartyTableViewCell.swift in Sources */,
 				5E7434371C85165D004FF3A2 /* Session.swift in Sources */,
+				5E1C52981C87ABF400C34BD7 /* ClubListTableViewCell.swift in Sources */,
+				5E1C529B1C87E49000C34BD7 /* ClubDetailsTableViewCell.swift in Sources */,
 				5E62656C1C8645E8003759C0 /* Logger.swift in Sources */,
 				5E1C528F1C8680AC00C34BD7 /* CLLocationDistance+Tonight.swift in Sources */,
-				5E7434241C84F448004FF3A2 /* ClubTableViewCell.swift in Sources */,
 				5E7434331C85165D004FF3A2 /* FirebaseApp.swift in Sources */,
 				5E7434211C84F440004FF3A2 /* ClubListTableViewController.swift in Sources */,
 			);

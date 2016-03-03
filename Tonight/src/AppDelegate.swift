@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     {
         // start gelocator service
         Geolocator.sharedInstance().start()
-        // just to desenv...
-//        FirebaseApp.sharedInstance().populateFirebase()
+        // create a set of records in Firebase database... this is used only in desenv phase
+//        FirebaseApp.sharedInstance().createDatabase()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
